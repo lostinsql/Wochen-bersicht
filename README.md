@@ -52,17 +52,21 @@ KIS-Exporten und den tagesaktuellen Bettensperrgründen.
 
 ## Was gerechnet wird
 
-- Pro Tag und Station: Anzahl Patienten aus dem Export, **Begleitpersonen
-  (Abr.-Art „BGL") werden nicht als Patienten gezählt**, erscheinen aber in der
-  Spalte „Begleit-person".
+- Pro Tag und Station: Anzahl Patienten aus dem Export. **Begleitpersonen
+  (Abr.-Art „BGL") werden weder als Patienten gezählt noch als Bettensperrung
+  übernommen** – die meisten liegen in Beistellbetten und sperren kein Bett.
+  Die Spalte „Begleitperson" enthält daher nur Bettensperren mit
+  entsprechendem Sperrgrund (z. B. „Wahlleist. 1-Bett-Zi."). Ein zusätzlicher
+  Input für Begleitpersonen kann später integriert werden.
 - Bettensperrungen aus der Sperrgründe-Datei, **„orig. umgewidmet" wird
   ausgeschlossen** (Blatt „Relevante Bettensperrungen" wird bevorzugt, sonst
   „Alle Bettensperrungen" ohne die ausgeschlossenen Gründe). Die Sperrgründe
   werden über `config/stations.json` den Spalten zugeordnet (Bau, Personal
   Pflege, Sonstiges Pflege, ärztliches Personal, Isolation, Feiertag,
   Begleitperson).
-- Belegbare Betten = aufgestellte Betten − Sperrungen − Begleitpersonen;
-  Auslastung = belegte / belegbare Betten; „Gesamt" summiert je Tag.
+- Belegbare Betten = aufgestellte Betten − Sperrungen (inkl. Sperrungen aus
+  Begleitpersonen-Gründen); Auslastung = belegte / belegbare Betten; „Gesamt"
+  summiert je Tag.
 - Stationen 1.1 + 1.3 werden als „CCC" zusammengefasst, 0.5 als „CPU"
   (konfigurierbar in `config/stations.json`, inkl. der aufgestellten Betten
   je Station).
@@ -74,6 +78,9 @@ KIS-Exporten und den tagesaktuellen Bettensperrgründen.
 
 `config/stations.json` enthält Stationsliste/-zuordnung, aufgestellte Betten,
 BGL-Abr.-Arten, das Sperrgrund-Mapping und die ausgeschlossenen Sperrgründe.
+Über `logo_path` (relativ zum Projektordner, z. B.
+`250213_deutsches_herzzentrum_logo_farbig_digital.png`) wird das Logo oben
+rechts in der PDF platziert; fehlt die Datei, wird die PDF ohne Logo erstellt.
 Anpassungen dort wirken sich auf alle Berichte aus.
 
 ## Übertragung auf andere Rechner / späterer Server

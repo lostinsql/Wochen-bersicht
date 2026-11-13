@@ -46,7 +46,7 @@ def run(modus, jahr=None, kw=None, von=None, bis=None, input_dir=None, output_di
     bericht = build_bericht(config, scan, start, ende, subtitel)
 
     pdf_path = output_dir / dateien_name(bericht, start, ende, modus, jahr, kw)
-    write_pdf(bericht, pdf_path)
+    write_pdf(bericht, pdf_path, logo_path=config.logo_path)
 
     if xlsx:
         from belegung.xlsx_ausgabe import write_xlsx

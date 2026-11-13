@@ -21,6 +21,7 @@ class Config:
     sperrgrund_mapping: dict
     sperrgrund_default_kategorie: str
     sperrung_spalten: list
+    logo_path: str | None = None
 
     @property
     def station_lookup(self):
@@ -52,6 +53,7 @@ def load_config(path: str | Path) -> Config:
         sperrgrund_mapping={k: [str(v).strip() for v in vals] for k, vals in raw.get("sperrgrund_mapping", {}).items()},
         sperrgrund_default_kategorie=raw.get("sperrgrund_default_kategorie"),
         sperrung_spalten=list(raw.get("sperrung_spalten", [])),
+        logo_path=raw.get("logo_path"),
     )
 
 

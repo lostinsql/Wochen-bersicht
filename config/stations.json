@@ -14,7 +14,8 @@
     {"label": "Station 3.3", "source_stations": ["3.3"],       "aufgestellte_betten": 16}
   ],
   "bgl_abrechnungsarten": ["BGL"],
-  "bgl_als_begleitperson_zaehlen": true,
+  "bgl_als_begleitperson_zaehlen": false,
+  "logo_path": "250213_deutsches_herzzentrum_logo_farbig_digital.png",
   "sperrgruende_sheet_praferenz": ["Relevante Bettensperrungen", "Alle Bettensperrungen"],
   "sperrgrund_ausschluss": ["orig. umgewidmet"],
   "sperrgrund_mapping": {
