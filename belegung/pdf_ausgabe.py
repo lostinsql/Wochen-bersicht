@@ -11,9 +11,10 @@ from reportlab.lib.units import mm
 from reportlab.lib.utils import ImageReader
 from reportlab.platypus import HRFlowable, PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
+from belegung import app_base
 from .bericht import SPERRUNG_KEYS, WOCHENTAGE, Bericht
 
-BASE = Path(__file__).resolve().parent.parent
+BASE = app_base()
 
 HEADER = [
     "Station", "Datum", "Tag", "Aufgestellte<br/>Betten", "Sperrung Bau",

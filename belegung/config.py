@@ -2,6 +2,8 @@ import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from belegung import app_base
+
 
 @dataclass
 class Station:
@@ -58,4 +60,4 @@ def load_config(path: str | Path) -> Config:
 
 
 def default_config_path() -> Path:
-    return Path(__file__).resolve().parent.parent / "config" / "stations.json"
+    return app_base() / "config" / "stations.json"

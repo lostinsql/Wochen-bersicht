@@ -22,12 +22,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from belegung import app_base
 from belegung.bericht import build_bericht, dateien_name, resolve_period
 from belegung.config import default_config_path, load_config
 from belegung.eingang import scan_input_folder
 from belegung.pdf_ausgabe import write_pdf
 
-BASE = Path(__file__).resolve().parent
+BASE = app_base()
 
 
 def _parse_date(s: str) -> dt.date:
