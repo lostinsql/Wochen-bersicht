@@ -25,7 +25,7 @@
     "Sperrung ärztliches Personl": ["Personalmangel Ärzte"],
     "Sperrung Isolation": ["Isolation"],
     "Sperrung Feiertag": ["Feiertagsschließung"],
-    "Begleitperson": ["Wahlleist. 1-Bett-Zi.", "Wahlleistung"]
+    "Begleitperson": ["Wahlleist. 1-Bett-Zi.", "Wahlleistung", "Begleitperson"]
   },
   "sperrgrund_default_kategorie": "Sperrung Sonstiges Pflege",
   "sperrung_spalten": [
